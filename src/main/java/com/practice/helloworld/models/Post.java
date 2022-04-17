@@ -57,4 +57,16 @@ public class Post {
     public void setViews(int views) {
         this.views = views;
     }
+
+//costructors____________________________________________________
+
+    public Post(){
+
+    }
+
+    public Post(String title, String anons, String full_text) {
+        this.title = title;
+        this.anons = anons;
+        this.full_text = full_text;
+    }
 }
