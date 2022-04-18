@@ -12,9 +12,9 @@
     <div th:each="el : ${post}">
         <form method="post">
             <input type = "text" th:value="${el.title}" name = "title" placeholder="Введіть назву статі" class = "form-control"><br>
-            <input type = "text" th:value="${el.anaons}" name = "anons" placeholder="Введіть анонс статі" class = "form-control"><br>
+            <input type = "text" th:value="${el.anons}" name = "anons" placeholder="Введіть анонс статі" class = "form-control"><br>
             <textarea name = "full_text" th:value="${el.full_text}" placeholder="Введіть повний текст статі" class = "form-control"></textarea><br>
-            <button type="submit" class="btn btn-success">Додати статтю</button>
+            <button type="submit" class="btn btn-success">Редагувати статтю</button>
         </form>
     </div>
 </div>
