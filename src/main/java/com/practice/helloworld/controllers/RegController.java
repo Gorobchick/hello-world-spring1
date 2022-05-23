@@ -11,24 +11,21 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 public class RegController {
-    @Controller
-    public class RegController {
+    @Autowired
+    private UserRepository userRepository;
 
-        @Autowired
-        private UserRepository userRepository;
+    @GetMapping("/registration")
+    public String register(Model model){
+        return "register";
+    }
 
-        @GetMapping("/registration")
-        public String register(Model model){
-            return "register";
-        }
-
-        @PostMapping("/blog/add")
-        public String registration (@RequestParam String username,
-                                      @RequestParam String email,
-                                      @RequestParam String password,
-                                      Model model) {
-            Users users = new Users(username, email, password);
-            userRepository.save(users);
-            return "redirect:/";
-        }
+    @PostMapping("/blog/add")
+    public String registration (@RequestParam String username,
+                                  @RequestParam String email,
+                                  @RequestParam String password,
+                                  Model model) {
+        Users users = new Users(username, email, password);
+        userRepository.save(users);
+        return "redirect:/";
+    }
 }
